@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    overflow: hidden;
+}
+
+.main-grid-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template: 1fr 5fr / 1fr 4fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar article";
+}
+
+.sidebar {
+    background-color: blue;
+    grid-area: sidebar;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: 40px;
+    padding-top: 20px;
+    color: white;
+}
+
+.sidebar > a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.sidebar > a:hover {
+    transition: all 0.3s;
+    color: aqua;
+}
+
+.sidebar-icon {
+    justify-self: center;
+}
+
+.sidebar-header {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.sidebar-link {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1.25rem;
+}
+
+.header {
+    background-color: white;
+    grid-area: header;
+}
+
+.article {
+    background-color: green;
+    grid-area: article;
+}
