@@ -201,11 +201,12 @@ body {
 /*Article*/
 
 .article {
-    overflow: scroll;
+    overflow: auto;
     background-color: var(--lightBg);
     z-index: 0;
     grid-area: article;
     display: grid;
+    row-gap: 30px;
     grid-template: 1fr 1fr / 3fr 1fr;
     grid-template-areas:
         "projects announcements"
@@ -220,16 +221,17 @@ body {
 
 .projects {
     grid-area: projects;
+    overflow: scroll;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150, 50%));
     grid-template-rows: 30px repeat(auto-fit, minmax(200px, 300px));
-    overflow: auto;
     gap: 20px;
     padding: 30px;
     padding-top: 40px;
 }
 
-.card {
+.card,
+.side-card {
     background-color: var(--extraLightBg);
     display: grid;
     flex-direction: column;
@@ -265,15 +267,50 @@ body {
 /*Announcements*/
 
 .announcements {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(auto-fit, minmax(200px, 300px));
+    overflow: visible;
+    gap: 20px;
+    padding: 30px;
+    padding-top: 40px;
     grid-area: announcements;
 }
 
-.announcements > .card {
+.side-card {
     border: none;
+    height: 100%;
+    overflow: scroll;
+}
+
+.announced {
+    border-bottom: solid 1px var(--darkBg);
+    padding: 15px;
+    margin: 30px;
+    margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 /*Trending*/
 
 .trending {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(auto-fit, minmax(150px, 50%));
+    overflow: visible;
+    gap: 20px;
+    padding: 30px;
+    padding-top: 10px;
     grid-area: trending;
+}
+
+.trend {
+    display: flex;
+    margin: 15px;
+}
+
+.trend-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
 }
